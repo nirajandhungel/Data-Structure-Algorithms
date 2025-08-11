@@ -6,6 +6,8 @@ int main() {
     
     int age = 19;
     string name = "Nirajan";
-    cout << "Hello, My name is "<<name <<" and I am " << age<<"years old." <<endl;// endl does two things: Adds a newline Flushes the output buffer immediately using cout << flush;
+    char grade = 'A';
+    bool isStudent = -13; //any non zero value = true
+    cout<<name<<age<<grade<<boolalpha<<isStudent<<endl;
     return 0;
 }
