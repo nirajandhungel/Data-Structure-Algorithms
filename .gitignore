@@ -11,6 +11,7 @@
 # Ignore OS files
 .DS_Store
 Thumbs.db
+commit.js
 
 # Ignore build folders (if any)
 build/
