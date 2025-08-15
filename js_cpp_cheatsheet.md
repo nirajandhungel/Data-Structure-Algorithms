@@ -25,18 +25,25 @@
 
 | Operation                          | JavaScript (String)               | C++ (`std::string`)                             |
 |-----------------------------------|---------------------------------|------------------------------------------------|
-| Declare                            | `let str = "hello";`             | `string str = "hello";`                        |
-| Length                             | `str.length`                     | `str.length()`                                 |
-| Access char                        | `str[0]`                         | `str[0]`                                       |
-| Convert to uppercase               | `str.toUpperCase()`              | Loop: `for(char &c : str) c = toupper(c);`    |
-| Convert to lowercase               | `str.toLowerCase()`              | Loop: `for(char &c : str) c = tolower(c);`    |
-| Substring                           | `str.slice(1,4)`                 | `str.substr(1,3)`                              |
-| Find char / substring               | `str.indexOf('e')`               | `str.find('e')`                                |
-| Not found                            | Returns `-1`                     | Returns `string::npos`                         |
+| Declaration                        | `let str = "hello";`             | `string str = "hello";`                        |
+| Length                             | `str.length`                     | `str.length()` or `str.size()`                 |
+| Access char                        | `str[0]`                         | `str[0]` or `str.at(0)`                        |
+| Modify char                        | `str[0] = 'H'` (not recommended) | `str[0] = 'H'`                                  |
+| Uppercase                          | `str.toUpperCase()`              | `transform(str.begin(), str.end(), str.begin(), ::toupper)`    |
+| Lowercase                          | `str.toLowerCase()`              | `transform(str.begin(), str.end(), str.begin(), ::tolower)`    |
+| Substring                          | `str.slice(1, 4)`                 | `str.substr(1, 3)`                              |
+| Find char                           | `str.indexOf('e')`               | `str.find('e')`                                |
+| Find substring                      | `str.indexOf('ell')`             | `str.find("ell")`                             |
+| Not found                           | Returns -1                        | Returns `string::npos`                          |
+| Replace                             | `str.replace('l', 'x')`          | `replace(str.begin(), str.end(), 'l', 'x')`    |
 | Concatenate                         | `str + " world"`                 | `str + " world"`                               |
-| Split                               | `str.split('')`                  | Not built-in; use `vector<char>` or loop      |
-| Join (array → string)               | `arr.join('')`                    | Manual loop or use `ostringstream`            |
-| Reverse                             | `str.split('').reverse().join('')` | Manual loop or `reverse(str.begin(), str.end())` |
+| Split                               | `str.split(' ')`                  | Manual with `getline` or `stringstream`        |
+| Join (array → string)               | `arr.join(' ')`                    | Manual loop or `ostringstream`                |
+| Trim whitespace                     | `str.trim()`                      | No built-in (use algorithms)                   |
+| Starts with                         | `str.startsWith("he")`          | `str.rfind("he", 0) == 0`                     |
+| Ends with                           | `str.endsWith("lo")`            | `str.size() >= s2.size() && str.compare(str.size()-s2.size(), s2.size(), s2) == 0` |
+| Reverse                             | `str.split('').reverse().join('')` | `reverse(str.begin(), str.end())`              |
+| Convert to array                     | `str.split('')`                    | `vector<char> v(str.begin(), str.end())`       |
 
 ---
 
