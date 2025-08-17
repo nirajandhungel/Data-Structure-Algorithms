@@ -1,3 +1,5 @@
+// wap to sort an array using manual method
+
 #include<iostream>
 using namespace std;
 int main (){
