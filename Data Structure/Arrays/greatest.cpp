@@ -1,3 +1,5 @@
+// wap to find greates element in an array
+
 #include<iostream>
 using namespace std;
 int main(){
