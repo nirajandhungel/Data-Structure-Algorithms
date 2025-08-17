@@ -1,3 +1,5 @@
+// WAP to count total even and odd numbers in an array
+
 #include<iostream>
 using namespace std;
 int main(){
